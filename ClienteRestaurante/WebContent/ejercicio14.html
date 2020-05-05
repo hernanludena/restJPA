@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=iso-8859-1"/>
+       <title>Ejemplo de codigo JavaScript en el propio documento</title> 
+        <script type="text/javascript" src="ejercicio14.js"></script>
+        <script type="text/javascript" src="utilitarios.js"></script>
+    </head>
+    
+    <body>
+      <form name = "p">               
+          <br> 
+            
+        <br><h1>Restaurantes</h1>
+        <br>Codigo: 
+        <input type="number" name="codigo"/>
+        <br>Nombre: 
+        <input type="text" name="nombre"/>
+        <br>Telefono:
+        <input type="text" name="telefono"/>
+        
+          <br>
+          
+          <input type="button" value="Insertar" onclick="insertar()"/> 
+          <input type="button" value="Recuperar" onclick="recuperar()"/> 
+          
+           <input type="button" value="InsertarGenerico" onclick="InsertarGenerico()"/>
+           <input type="button" value="RecuperarGenerico" onclick="RecuperarGenerico()"/>
+          
+           <table id="listaRestaurantes" cellpadding="2" cellspacing="2" border="1"></table>
+           
+        </form>    
+    </body>
+</html>
+    
+ 
+

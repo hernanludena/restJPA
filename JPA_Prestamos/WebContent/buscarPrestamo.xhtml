@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/clearTemplate.xhtml">
+
+	<ui:define name="contenido">
+		<h:form>
+			<p:panelGrid columns="2">
+				<h:outputText value="Cliente: " />
+				<p:inputText value="#{buscarPrestamoControlador.idCliente}"></p:inputText>
+			</p:panelGrid>
+
+			<p:commandButton value="Buscar"
+				action="#{buscarPrestamoControlador.buscarPrestamo}" update="@form"></p:commandButton>
+				
+				<p:commandButton value="Pagar"
+				action="#{buscarPrestamoControlador.pagar}" update="@form"></p:commandButton>
+				
+
+			<p:dataTable
+				value="#{buscarPrestamoControlador.prestamo.detallesPrestamo}"
+				var="d">
+				<p:column headerText="Capital">
+					<h:outputText value="#{d.capitalCuota}" />
+				</p:column>
+				<p:column headerText="Interes">
+					<h:outputText value="#{d.interesCuota}" />
+				</p:column>
+				<p:column headerText="Cuota">
+					<h:outputText value="#{d.totalCuota}" />
+				</p:column>
+				<p:column headerText="Fecha Pago">
+					<h:outputText value="#{d.fechaPago}" />
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>
